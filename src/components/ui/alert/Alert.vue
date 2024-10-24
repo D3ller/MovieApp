@@ -1,6 +1,6 @@
 <script setup>
-import { alertVariants } from ".";
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
+import { alertVariants } from '.';
 
 const props = defineProps({
   class: { type: null, required: false },
