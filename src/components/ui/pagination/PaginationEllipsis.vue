@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from "vue";
-import { AlertDialogCancel } from "radix-vue";
+import { PaginationEllipsis } from "radix-vue";
+import { MoreHorizontal } from "lucide-vue-next";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 
 const props = defineProps({
   asChild: { type: Boolean, required: false },
@@ -18,12 +18,12 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <AlertDialogCancel
+  <PaginationEllipsis
     v-bind="delegatedProps"
-    :class="
-      cn(buttonVariants({ variant: 'outline' }), 'mt-2 sm:mt-0', props.class)
-    "
+    :class="cn('w-9 h-9 flex items-center justify-center', props.class)"
   >
-    <slot />
-  </AlertDialogCancel>
+    <slot>
+      <MoreHorizontal />
+    </slot>
+  </PaginationEllipsis>
 </template>
