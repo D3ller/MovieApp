@@ -29,6 +29,7 @@ let modal = reactive({
 let getCategory = () => {
   axios.get(`${api_url}/categories/${id}`).then((res) => {
     category_data.value = res.data
+    modal.edit.title = res.data.title
     res.data.movies.forEach(e => {
       axios.get(`${api_url}/movies/${e.substring(12)}`).then((e) => {
         films.value.push(e.data)
