@@ -1,28 +1,31 @@
-# .
 
-This template should help get you started developing with Vue 3 in Vite.
+# Application de Films
 
-## Recommended IDE Setup
+Ce site web est une application permettant de rechercher des films. Vous pouvez rechercher des films par titre et consulter les détails d'un film.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+> **Note** : Il est possible que l'API ne charge pas immédiatement lors du premier lancement de l'application. Si cela se produit, veuillez recharger la page.
 
-## Customize configuration
+## Configuration recommandée de l'IDE
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (et désactivez Vetur).
 
-## Project Setup
+## Personnalisation de la configuration
+
+Voir la [Référence de Configuration Vite](https://vitejs.dev/config/).
+
+## Installation du projet
 
 ```sh
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compiler et recharger à chaud pour le développement
 
 ```sh
 pnpm run dev
 ```
 
-### Compile and Minify for Production
+### Compiler et minifier pour la production
 
 ```sh
 pnpm run build
