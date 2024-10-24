@@ -1,10 +1,16 @@
 const animate = require("tailwindcss-animate")
+const scrollbar = require('tailwind-scrollbar')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
+    variants: {
+        extend: {
+            display: ["group-hover"],
+        },
+    },
   
   content: [
     './pages/**/*.{js,jsx,vue}',
@@ -91,6 +97,7 @@ module.exports = {
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
       },
     },
+
   },
-  plugins: [animate],
+    plugins: [animate, scrollbar],
 }
