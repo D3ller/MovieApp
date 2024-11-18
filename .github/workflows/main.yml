@@ -28,6 +28,9 @@ jobs:
     - name: Install dependencies
       run: pnpm install && pnpm i cypress
 
+    - name: Run server
+      run: pnpm run test:e2e:dev
+
     - name: Checkout
       uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
