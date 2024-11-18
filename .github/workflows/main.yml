@@ -28,17 +28,12 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Build application
-      run: pnpm run build
-
-    - name: Start application in background
-      run: pnpm run start
-
-    - name: Run Cypress Tests
+    - name: Checkout
+      uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+    - name: Cypress run
       uses: cypress-io/github-action@v6
-      with:
-        working-directory: ./
-        browser: chrome
 
       # Configure la clé SSH pour se connecter à ton VPS
     - name: Setup SSH
