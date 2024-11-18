@@ -32,10 +32,7 @@ jobs:
       run: pnpm run build
 
     - name: Start application in background
-      run: pnpm run start &
-
-    - name: Wait for server to start
-      run: npx wait-on http://localhost:3000
+      run: pnpm run start
 
     - name: Run Cypress Tests
       uses: cypress-io/github-action@v6
