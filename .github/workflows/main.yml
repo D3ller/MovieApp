@@ -28,13 +28,19 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
+    - name: Build application
+      run: pnpm run build
+
+    - name: Start application in background
+      run: pnpm run start &
+
+    - name: Wait for server to start
+      run: npx wait-on http://localhost:3000
+
     - name: Run Cypress Tests
       uses: cypress-io/github-action@v6
       with:
         working-directory: ./
-        build: pnpm run build
-        start: pnpm run start
-        wait-on: 'http://localhost:3000'
         browser: chrome
 
       # Configure la clé SSH pour se connecter à ton VPS
