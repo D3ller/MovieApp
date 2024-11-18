@@ -32,11 +32,6 @@ jobs:
     - name: Start server
       run: nohup pnpm run dev &
 
-    # Attendre que le serveur soit prêt
-    - name: Wait for server to be ready
-      run: |
-        npx wait-on http://localhost:3000
-
     # Lancer Cypress pour tester l'application
     - name: Cypress run
       uses: cypress-io/github-action@v6
