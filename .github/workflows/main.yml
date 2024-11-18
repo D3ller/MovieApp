@@ -1,12 +1,12 @@
 name: Upload Movie App
 on:
-    push:
-      branches:
-        - main
-        - develop
-    pull_request:
-      branches:
-        - main
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -28,17 +28,20 @@ jobs:
     - name: Install dependencies
       run: pnpm install && pnpm i cypress
 
-    - name: Run server
-      run: pnpm run dev
+    # Démarrer le serveur en arrière-plan
+    - name: Start server
+      run: nohup pnpm run dev &
 
-    - name: Checkout
-      uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+    # Attendre que le serveur soit prêt
+    - name: Wait for server to be ready
+      run: |
+        npx wait-on http://localhost:3000
+
+    # Lancer Cypress pour tester l'application
     - name: Cypress run
       uses: cypress-io/github-action@v6
 
-      # Configure la clé SSH pour se connecter à ton VPS
+    # Configure la clé SSH pour se connecter à ton VPS
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.5.3
       with:
