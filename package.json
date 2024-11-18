@@ -12,19 +12,22 @@
   },
   "dependencies": {
     "@radix-icons/vue": "^1.0.0",
+    "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^11.1.0",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cypress": "latest",
     "js-cookie": "^3.0.5",
     "lucide-vue-next": "^0.446.0",
     "pinia": "^2.2.4",
     "radix-vue": "^1.9.6",
+    "start-server-and-test": "^2.0.8",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
+    "vitest": "^2.1.5",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "cypress": "latest"
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
